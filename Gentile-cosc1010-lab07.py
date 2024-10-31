@@ -1,9 +1,9 @@
-# Your Name Here
+# Joshua Gentile
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
-# Sources, people worked with, help given to: 
+# Submission Date 10/31/2024
+# Lab 07
+# Lab Section: 18
+# Sources, people worked with, help given to: Austin Barner
 # your
 # comments
 # here
@@ -18,6 +18,20 @@
 # You will continue to prompt the user until a proper integer value is entered
 
 factorial = 1
+
+while True:
+    number = input("I calculate factorials. Please enter an integer. ")
+    if number.isdigit():
+        break
+    else:
+        print("That is not an integer!")
+
+while True:
+    number = int(number)
+    factorial = number * factorial
+    number = number - 1
+    if number <2:
+        break
 
 print(f"The result of the factorial based on the given bound is {factorial}")
 
@@ -39,6 +53,18 @@ print("*"*75)
 
 num_sum = 0 
 
+while True:
+    inp = input("I sum all inputs, please enter an integer. ")
+    if inp.isdigit():
+        inp = int(inp)
+        num_sum += inp
+    elif inp[0] == "-":
+        inp = int(inp)
+        num_sum += inp
+    elif inp.lower() == "exit":
+        break
+
+
 print(f"Your final sum is {num_sum}")
 
 print("*"*75)
@@ -58,5 +84,49 @@ print("*"*75)
     # So, it should function the same for `5 + 6` as `5+6`
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
-
-        
+lst1 = []
+while True:
+    cal = input("I'm a simple calculator, please enter an equation. ")
+    cal = cal.replace(" ","")
+    if "+" in cal:
+        lst1 = cal.split("+")
+        l = lst1[0]
+        r = lst1[1]
+        if l.isdigit() and r.isdigit():
+            l = int(l)
+            r = int(r)
+            print(l+r)
+    if "-" in cal:
+        lst1 = cal.split("-")
+        l = lst1[0]
+        r = lst1[1]
+        if l.isdigit() and r.isdigit():
+            l = int(l)
+            r = int(r)
+            print(l-r)
+    if "/" in cal:
+        lst1 = cal.split("/")
+        l = lst1[0]
+        r = lst1[1]
+        if l.isdigit() and r.isdigit():
+            l = int(l)
+            r = int(r)
+            print(l/r)
+    if "*" in cal:
+        lst1 = cal.split("*")
+        l = lst1[0]
+        r = lst1[1]
+        if l.isdigit() and r.isdigit():
+            l = int(l)
+            r = int(r)
+            print(l*r)
+    if "%" in cal:
+        lst1 = cal.split("%")
+        l = lst1[0]
+        r = lst1[1]
+        if l.isdigit() and r.isdigit():
+            l = int(l)
+            r = int(r)
+            print(l%r)
+    elif cal.lower() == "exit":
+        break
